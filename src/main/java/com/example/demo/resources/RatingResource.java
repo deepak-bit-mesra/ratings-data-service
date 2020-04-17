@@ -38,13 +38,13 @@ public class RatingResource {
 	@RequestMapping("users/{userId}")
 	public UserRating getUserRating(@PathVariable("userId") String userId) {
 		
-		LOGGER.info("...... Inside Rating Service");
-		Span span =  tracer.currentSpan();
 		
-		System.out.println("tracer.currentSpan().context() = "+tracer.currentSpan().context());
-		System.out.println("Span in User Rating = "+ span);
-		System.out.println("span.isNoop() = "+span.isNoop());
-		System.out.println("tracer.currentSpan().context().parentIdString() = "+tracer.currentSpan().context().parentIdString());
+		Span span =  tracer.currentSpan();
+		LOGGER.info("...... Inside Rating Service");
+		LOGGER.info("Rating: tracer.currentSpan().context() = "+tracer.currentSpan().context());
+		LOGGER.info("Rating: Span in User Rating = "+ span);
+		LOGGER.info("Rating: span.isNoop() = "+span.isNoop());
+		LOGGER.info("Rating: parentIdString() = "+tracer.currentSpan().context().parentIdString());
 		
 		
 		
